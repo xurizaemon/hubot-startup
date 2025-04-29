@@ -39,30 +39,28 @@ describe('Startup Script', () => {
   let adapter
 
   beforeEach(async () => {
-    // Set up the robot using mock adapter
-    process.env.PORT = '0'
-    robot = new Robot('mock-adapter', false, 'hubot', null) // Correct parameter order
+    // Disable HTTP server for test.
+    process.env.EXPRESS_PORT = 'disabled'
+    process.env.PORT = 'disabled'
+
+    robot = new Robot('mock-adapter', false, 'hubot')
     adapter = new MockAdapter(robot)
 
-    // Load the startup script
     startupScript(robot)
-
-    // Start the robot
     await robot.run()
   })
 
   afterEach(async () => {
+    if (robot?.server?.close) {
+      await new Promise(resolve => robot.server.close(resolve))
+    }
     if (robot) {
       await robot.shutdown()
     }
-    // delete process.env.HUBOT_STARTUP_ROOM
-    // delete process.env.HUBOT_STARTUP_MESSAGE
-    if (process._getActiveHandles().length || process._getActiveRequests().length) {
-      console.log(process._getActiveHandles(), 'active handles')
-      console.log(process._getActiveRequests(), 'active requests')
-      console.warn('Forcefully closing active handles or requests.')
-      process.exit(0) // Force exits after shutting down lingering actions
-    }
+    delete process.env.HUBOT_STARTUP_ROOM
+    delete process.env.HUBOT_STARTUP_MESSAGE
+    delete process.env.EXPRESS_PORT
+    delete process.env.PORT
   })
 
   it('should send the default message to the default room', () => {
