@@ -18,17 +18,22 @@ or
 
 ## Configuration
 
-See [`src/scripts/startup.js`](src/scripts/startup.coffee).
+The environment variables for configuration are:
 
-`HUBOT_STARTUP_ROOM` can be one of 3 formats:
-1. either a room name, e.g. "general"
-2. or a room name preceded by "#", e.g. "#general"
-3. or a username preceded by "@", e.g. "@somebody"
-
+| Variable name | Example value                  | Description                                            |
+|--|--------------------------------|--------------------------------------------------------|
+| HUBOT_STARTUP_ROOM | general, #general or @somebody | Room name (with # prefix) or user name (with @ prefix) |
+| HUBOT_STARTUP_MESSAGE | Hello, cruel world! | The message to emit |
 
 ## Development
 
-`npm run`
+`npm test`
+
+## Support
+
+![maintenance not intended](https://unmaintained.tech)
+
+There is no commitment to maintaining this software. That said, PRs and issues are welcome!
 
 ## License
 
@@ -36,20 +41,5 @@ See [`src/scripts/startup.js`](src/scripts/startup.coffee).
 
 ## Author
 
-[bouzuya][user] &lt;[m@bouzuya.net][mail]&gt; ([http://bouzuya.net][url])
-
-## Badges
-
-[![Build Status][travis-badge]][travis]
-[![Dependencies status][david-dm-badge]][david-dm]
-[![Coverage Status][coveralls-badge]][coveralls]
-
-[travis]: https://travis-ci.org/bouzuya/hubot-startup
-[travis-badge]: https://travis-ci.org/bouzuya/hubot-startup.svg?branch=master
-[david-dm]: https://david-dm.org/bouzuya/hubot-startup
-[david-dm-badge]: https://david-dm.org/bouzuya/hubot-startup.png
-[coveralls]: https://coveralls.io/r/bouzuya/hubot-startup
-[coveralls-badge]: https://img.shields.io/coveralls/bouzuya/hubot-startup.svg
-[user]: https://github.com/bouzuya
-[mail]: mailto:m@bouzuya.net
-[url]: http://bouzuya.net
+- [hubot-startup](https://github.com/bouzuya/hubot-startup), the coffeescript original, works with early versions of Hubot - [bouzuya](https://github.com/bouzuya) &lt;[m@bouzuya.net](mailto:m@bouzuya.net)&gt; ([http://bouzuya.net](http://bouzuya.net)).
+- [@xurizaemon/hubot-startup](https://github.com/xurizaemon/hubot-startup) for Hubot v10+ - [xurizaemon](https://chris.bur.gs)
