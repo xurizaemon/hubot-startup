@@ -1,17 +1,15 @@
-# hubot-startup
+# @xurizaemon/hubot-startup
 
-A Hubot script that greets us when this script loaded.
-
-![](http://img.f.hatena.ne.jp/images/fotolife/b/bouzuya/20141006/20141006001533.gif)
+A Hubot script to emit a startup message.
 
 ## Installation
 
-    $ npm install git://github.com/bouzuya/hubot-startup.git
+    npm install @xurizaemon/hubot-startup
 
 or
 
-    $ # TAG is the package version you need.
-    $ npm install 'git://github.com/bouzuya/hubot-startup.git#TAG'
+    # REF is the tag or branch you want
+    npm install 'github:xurizaemon/hubot-startup.git#REF'
 
 ## Example
 
@@ -20,12 +18,13 @@ or
 
 ## Configuration
 
-See [`src/scripts/startup.coffee`](src/scripts/startup.coffee).
+See [`src/scripts/startup.js`](src/scripts/startup.coffee).
 
 `HUBOT_STARTUP_ROOM` can be one of 3 formats:
 1. either a room name, e.g. "general"
 2. or a room name preceded by "#", e.g. "#general"
 3. or a username preceded by "@", e.g. "@somebody"
+
 
 ## Development
 

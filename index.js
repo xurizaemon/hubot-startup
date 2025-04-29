@@ -1,5 +1,5 @@
-var path = require('path');
+const path = import('path')
 
-module.exports = function (robot) {
-  robot.load(path.join(__dirname, '/lib/scripts/'));
-};
+export default (robot) => {
+  robot.load(path.join(__dirname, '/src/'))
+}
