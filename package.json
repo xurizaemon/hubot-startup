@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/xurizaemon/hubot-startup#readme",
   "dependencies": {
-    "hubot": "^11"
+    "hubot": "^13.0.1"
   },
   "devDependencies": {
     "standard": "^17.1.2"
