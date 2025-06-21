@@ -24,6 +24,7 @@ The environment variables for configuration are:
 |--|--------------------------------|--------------------------------------------------------|
 | HUBOT_STARTUP_ROOM | general, #general or @somebody | Room name (with # prefix) or user name (with @ prefix) |
 | HUBOT_STARTUP_MESSAGE | Hello, cruel world! | The message to emit |
+| HUBOT_STARTUP_DELAY | 5000 | Milliseconds to wait before messaging |
 
 ## Development
 
